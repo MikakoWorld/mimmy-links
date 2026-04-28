@@ -10,6 +10,7 @@
   <meta property="og:type" content="website">
   <meta name="theme-color" content="#f8e8ee">
   <link rel="stylesheet" href="styles.css">
+  <script defer src="app.js"></script>
 </head>
 <body>
   <main class="page-shell">
@@ -62,8 +63,12 @@
     <section class="block" aria-labelledby="card-title">
       <h2 id="card-title">オトモモチカード作成サイト</h2>
       <div class="zeta-card-preview" aria-label="Mimmyのオトモモチカード">
-        <img src="assets/images/my_zeta_card/left.jpg" alt="Mimmyのオトモモチカード 表面" loading="lazy">
-        <img src="assets/images/my_zeta_card/right.jpg" alt="Mimmyのオトモモチカード 裏面" loading="lazy">
+        <button class="zeta-card-thumb" type="button" data-full-image="assets/images/my_zeta_card/left.jpg" data-full-alt="Mimmyのオトモモチカード 表面">
+          <img src="assets/images/my_zeta_card/left.jpg" alt="Mimmyのオトモモチカード 表面" loading="lazy">
+        </button>
+        <button class="zeta-card-thumb" type="button" data-full-image="assets/images/my_zeta_card/right.jpg" data-full-alt="Mimmyのオトモモチカード 裏面">
+          <img src="assets/images/my_zeta_card/right.jpg" alt="Mimmyのオトモモチカード 裏面" loading="lazy">
+        </button>
       </div>
       <p>画像にぺちぺち文字打ちがつらい人向けに作ったサイト。<br>上の画像みたいなものが作れます。</p>
       <a class="primary-link" href="https://mikakoworld.github.io/zetacards/" target="_blank" rel="noopener noreferrer">
@@ -71,5 +76,12 @@
       </a>
     </section>
   </main>
+  <div class="image-modal" id="image-modal" hidden>
+    <button class="image-modal-backdrop" type="button" data-close-modal aria-label="拡大画像を閉じる"></button>
+    <div class="image-modal-content" role="dialog" aria-modal="true" aria-label="オトモモチカード拡大表示">
+      <button class="image-modal-close" type="button" data-close-modal>閉じる</button>
+      <img id="modal-image" src="" alt="">
+    </div>
+  </div>
 </body>
 </html>

@@ -255,10 +255,81 @@ h1 span {
   display: block;
   width: 100%;
   height: auto;
+}
+
+.zeta-card-thumb {
+  display: block;
+  width: 100%;
+  padding: 0;
   border: 1px solid rgba(80, 48, 52, 0.16);
   border-radius: 8px;
   background: var(--paper);
   box-shadow: 0 8px 18px rgba(96, 54, 60, 0.1);
+  cursor: zoom-in;
+  overflow: hidden;
+  transition: transform 150ms ease, box-shadow 150ms ease;
+}
+
+.zeta-card-thumb:hover,
+.zeta-card-thumb:focus-visible {
+  transform: translateY(-2px);
+  box-shadow: 0 14px 26px rgba(96, 54, 60, 0.14);
+  outline: none;
+}
+
+.image-modal[hidden] {
+  display: none;
+}
+
+.image-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 20;
+  display: grid;
+  place-items: center;
+  padding: 18px;
+}
+
+.image-modal-backdrop {
+  position: absolute;
+  inset: 0;
+  border: 0;
+  background: rgba(31, 24, 27, 0.74);
+  cursor: zoom-out;
+}
+
+.image-modal-content {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  gap: 10px;
+  width: min(94vw, 520px);
+  max-height: 92vh;
+}
+
+.image-modal-close {
+  justify-self: end;
+  padding: 9px 14px;
+  border: 1px solid rgba(255, 253, 249, 0.3);
+  border-radius: 8px;
+  color: #fffdf9;
+  background: rgba(255, 253, 249, 0.16);
+  font: inherit;
+  font-weight: 800;
+}
+
+.image-modal-content img {
+  display: block;
+  width: 100%;
+  max-height: calc(92vh - 54px);
+  border-radius: 8px;
+  object-fit: contain;
+  background: var(--paper);
+  box-shadow: 0 24px 54px rgba(0, 0, 0, 0.28);
+}
+
+body.modal-open {
+  overflow: hidden;
 }
 
 @media (max-width: 480px) {
