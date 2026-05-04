@@ -244,6 +244,55 @@ h1 span {
   background: var(--text);
 }
 
+.video-page {
+  display: grid;
+  min-height: 100vh;
+  align-items: center;
+}
+
+.video-gate {
+  padding: 24px;
+}
+
+.video-gate h1 {
+  margin-bottom: 10px;
+  color: var(--text);
+  font-size: clamp(2rem, 10vw, 3.4rem);
+  line-height: 1.08;
+}
+
+.video-eyebrow {
+  color: var(--accent-deep);
+}
+
+.video-show-button {
+  width: 100%;
+  border: 0;
+  font: inherit;
+  cursor: pointer;
+}
+
+.video-show-button[hidden],
+.video-frame[hidden] {
+  display: none;
+}
+
+.video-frame {
+  margin-top: 16px;
+  overflow: hidden;
+  border: 1px solid rgba(80, 48, 52, 0.16);
+  border-radius: 8px;
+  background: #111;
+  box-shadow: 0 14px 30px rgba(96, 54, 60, 0.16);
+}
+
+.video-frame video {
+  display: block;
+  width: 100%;
+  max-height: 78vh;
+  background: #111;
+}
+
 .zeta-card-preview {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
