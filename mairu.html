@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>哩ショートダンス | Mimmy Links</title>
+  <meta name="description" content="哩のちょっと動くやつ生成ためしました⚠️音出る">
+  <meta property="og:title" content="哩ショートダンス | Mimmy Links">
+  <meta property="og:description" content="哩のちょっと動くやつ生成ためしました⚠️音出る">
+  <meta property="og:type" content="website">
+  <meta name="theme-color" content="#f8e8ee">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="page-shell video-page">
+    <section class="block video-gate" aria-labelledby="video-title">
+      <p class="eyebrow video-eyebrow">Mimmy Links</p>
+      <h1 id="video-title">哩ショートダンス</h1>
+      <p>哩のちょっと動くやつ生成ためしました⚠️音出る</p>
+      <button class="primary-link video-show-button" type="button" id="show-video">
+        動画を表示
+      </button>
+      <div class="video-frame" id="video-frame" hidden>
+        <video id="mairu-video" controls playsinline preload="metadata">
+          <source src="assets/videos/mairu_202605041725.mp4" type="video/mp4">
+          お使いのブラウザでは動画を再生できません。
+        </video>
+      </div>
+    </section>
+  </main>
+  <script>
+    const showButton = document.querySelector("#show-video");
+    const videoFrame = document.querySelector("#video-frame");
+    const video = document.querySelector("#mairu-video");
+
+    showButton.addEventListener("click", () => {
+      videoFrame.hidden = false;
+      showButton.hidden = true;
+      video.play().catch(() => {
+        video.focus();
+      });
+    });
+  </script>
+</body>
+</html>
