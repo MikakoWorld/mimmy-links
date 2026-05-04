@@ -9,7 +9,8 @@
   <meta property="og:description" content="浬のちょっと動くやつ試しました">
   <meta property="og:type" content="website">
   <meta name="theme-color" content="#f8e8ee">
-  <link rel="stylesheet" href="styles.css?v=20260504-1800">
+  <link rel="stylesheet" href="styles.css?v=20260505-0115">
+  <script defer src="video-page.js?v=20260505-0115"></script>
 </head>
 <body>
   <header class="site-header">
@@ -38,25 +39,12 @@
         動画を表示
       </button>
       <div class="video-frame" id="video-frame" hidden>
-        <video id="kairi-video" controls playsinline preload="metadata">
+        <video id="kairi-video" data-gated-video playsinline preload="auto" tabindex="-1">
           <source src="assets/videos/kairi_202605041154.mp4" type="video/mp4">
           お使いのブラウザでは動画を再生できません。
         </video>
       </div>
     </section>
   </main>
-  <script>
-    const showButton = document.querySelector("#show-video");
-    const videoFrame = document.querySelector("#video-frame");
-    const video = document.querySelector("#kairi-video");
-
-    showButton.addEventListener("click", () => {
-      videoFrame.hidden = false;
-      showButton.hidden = true;
-      video.play().catch(() => {
-        video.focus();
-      });
-    });
-  </script>
 </body>
 </html>

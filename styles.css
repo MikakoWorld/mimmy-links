@@ -365,6 +365,10 @@ h1 span {
   box-shadow: 0 14px 30px rgba(96, 54, 60, 0.16);
 }
 
+.video-frame.is-playing {
+  box-shadow: none;
+}
+
 .video-frame video {
   display: block;
   width: 100%;

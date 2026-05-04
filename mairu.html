@@ -9,7 +9,8 @@
   <meta property="og:description" content="哩のちょっと動くやつ生成ためしました⚠️音出る">
   <meta property="og:type" content="website">
   <meta name="theme-color" content="#f8e8ee">
-  <link rel="stylesheet" href="styles.css?v=20260504-1800">
+  <link rel="stylesheet" href="styles.css?v=20260505-0115">
+  <script defer src="video-page.js?v=20260505-0115"></script>
 </head>
 <body>
   <header class="site-header">
@@ -38,25 +39,12 @@
         動画を表示
       </button>
       <div class="video-frame" id="video-frame" hidden>
-        <video id="mairu-video" controls playsinline preload="metadata">
+        <video id="mairu-video" data-gated-video playsinline preload="auto" tabindex="-1">
           <source src="assets/videos/mairu_202605041725.mp4" type="video/mp4">
           お使いのブラウザでは動画を再生できません。
         </video>
       </div>
     </section>
   </main>
-  <script>
-    const showButton = document.querySelector("#show-video");
-    const videoFrame = document.querySelector("#video-frame");
-    const video = document.querySelector("#mairu-video");
-
-    showButton.addEventListener("click", () => {
-      videoFrame.hidden = false;
-      showButton.hidden = true;
-      video.play().catch(() => {
-        video.focus();
-      });
-    });
-  </script>
 </body>
 </html>
