@@ -1,8 +1,12 @@
-const showButton = document.querySelector("#show-video");
-const videoFrame = document.querySelector("#video-frame");
-const video = document.querySelector("[data-gated-video]");
+document.querySelectorAll(".video-gate").forEach((gate) => {
+  const showButton = gate.querySelector(".video-show-button");
+  const videoFrame = gate.querySelector(".video-frame");
+  const video = gate.querySelector("[data-gated-video]");
 
-if (showButton && videoFrame && video) {
+  if (!showButton || !videoFrame || !video) {
+    return;
+  }
+
   function enableControls() {
     video.controls = true;
     videoFrame.classList.add("is-playing");
@@ -29,4 +33,4 @@ if (showButton && videoFrame && video) {
 
   video.addEventListener("playing", enableControls);
   showButton.addEventListener("click", showAndPlayVideo, { once: true });
-}
+});
