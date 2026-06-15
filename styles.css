@@ -60,7 +60,7 @@ a {
   position: relative;
 }
 
-.hamburger-menu summary {
+.hamburger-menu > summary {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -76,11 +76,11 @@ a {
   list-style: none;
 }
 
-.hamburger-menu summary::-webkit-details-marker {
+.hamburger-menu > summary::-webkit-details-marker {
   display: none;
 }
 
-.hamburger-menu summary span {
+.hamburger-menu > summary span {
   display: block;
   width: 18px;
   height: 2px;
@@ -115,6 +115,58 @@ a {
 .menu-panel a:focus-visible {
   background: var(--paper-soft);
   outline: none;
+}
+
+.menu-accordion {
+  border-radius: 8px;
+}
+
+.menu-accordion summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 12px;
+  border-radius: 8px;
+  color: var(--text);
+  font-size: 0.92rem;
+  font-weight: 800;
+  cursor: pointer;
+  list-style: none;
+}
+
+.menu-accordion summary::-webkit-details-marker {
+  display: none;
+}
+
+.menu-accordion summary::after {
+  content: "";
+  width: 8px;
+  height: 8px;
+  border-right: 2px solid var(--muted);
+  border-bottom: 2px solid var(--muted);
+  transform: rotate(45deg);
+  transition: transform 0.18s ease;
+}
+
+.menu-accordion[open] summary::after {
+  transform: rotate(225deg);
+}
+
+.menu-accordion summary:hover,
+.menu-accordion summary:focus-visible {
+  background: var(--paper-soft);
+  outline: none;
+}
+
+.menu-accordion-list {
+  display: grid;
+  gap: 2px;
+  margin-top: 2px;
+  padding-left: 8px;
+}
+
+.menu-accordion-list a {
+  font-size: 0.88rem;
 }
 
 .page-shell {
